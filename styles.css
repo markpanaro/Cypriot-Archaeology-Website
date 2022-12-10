@@ -77,6 +77,12 @@ img {
 
 .text {
   font-size: 20px;
+  padding-left: 125px;
+  padding-right: 125px;
+}
+
+.citations {
+  font-size: 20px;
   padding-left: 20px;
 }
 
