@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Visualizations of Polis Chrysochous Data</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Visualizations of Polis Chrysochous Data</title>
   </head>
 
   <div class="topnav">
@@ -15,43 +15,103 @@
 <body>
   <h1>Visualizations of Polis Chrysochous Data</h1>
 
-  <h2>From Open Context's Excavations at Polis Set</h2>
+  <h2>Using Open Context's Excavations at Polis Set</h2>
   
   <div class="text">
       <blockquote>This page contains visualizations and explanations of different sections of data from the Excavations at
       Polis data set obtained from Open Context. Decisions about where to excavate next are normally made by examining the 
       types of materials and artifacts found within a site based off a posed research question. These visualizations were made 
-      to assist in making these choices. To download or view the original data set please click <a
+      to assist in making these choices. Work is done in both MATLAB and Python, and the respective repositories for each can be accessed via the buttons below. To download or view the original data set please click <a
       href="https://opencontext.org/search/Cyprus?q=polis#10/35.0349/32.4218/20/any/Google-Satellite">here</a>.
   </blockquote>
+  </div>
+
+  <h2>Work Done Through MATLAB</h2>
+
+  <div class = "text">
+  <blockquote>This section is devoted to the work done on visualizing the Polis data set utilizing MATLAB. A short script titled importPolisData was written to take the excel file and import only the columns desired for this project into MATLAB. An initial clean 
+    of the data to remove NaN values is simple enough to perform utilizing built in tools. However, to sort the data into categories 
+    based on keywords is a bit more complex. A new function toCategorize was created to accomplish this task. The function takes a column
+     of data and a list of substrings to search for, searching through each entry for the related substring and converting to the proper 
+     category if it is found. Data not put into a category is listed as “other”. After running the toCategorize function, it is possible to 
+     visualize the data for further analysis. The code to clean and visualize the Polis data set was implemented in a way that should work for 
+     other similar sets of data. Visuals relating to the sizes of different artifacts were also made to glean additional experience with data 
+     science.</blockquote>
   </div>
 
   <div class = "right">
     <blockquote>For this section regarding material type: An initial missing data clean is performed. From there, 
       many of the remaining data points are cleaned to present a more general view. For example, "Marble", "Marble 
-      - White", and "Marble - Smooth White" were all combined to be a part of the "Marble" category for visualization. 
-      Additionally, there is a large count of individual or groups of items not significant enough to graph. Any item 
+      - White", and "Marble - Smooth White" were all combined to be a part of the "Marble" category for visualization using the toCategorize function. 
+      As was stated above, there are large counts of individual or groups of items not significant enough to graph. Any item 
       category that makes up less than 1% of the total dataset is marked as "Other" for visualization purposes. These 
-      items would crowd the visualization, and are easier to make sense of as a list.</blockquote>
+      items would crowd the visualization, and are easier to make sense of as a list.This section displays the material types
+      of the different artifacts found at Polis. This is useful in the process of examining what materials were being worked with
+      in a site.</blockquote>
     <img src="Images/Polis Materials Pie.jpg" alt="Polis Materials">
   </div>
     
   <div class = "left">
     <img src="Images/Polis Categories Pie.jpg">
-    <blockquote>This is the section responsible for correctly sorting the data into categorical variables based on 
-      contained keywords within the cell body. Items that are not linked to a predefined category are sorted into "Other".</blockquote>
+    <blockquote>It can be useful to see a breakdown of what types of artifacts are being found within a site. This visual shows
+      that a large percentage of found items are terracotta statuettes. This makes sense, as Polis was used as a religious site and these figures
+      were often left behind as offerings to the gods.</thead>
+    </blockquote>
   </div>
 
   <div class = "right">
     <blockquote>Within active archaeological digs, it can be useful to know where to dig next based on the research problem. 
-      Visualizing the material distribution from different contexts can make it easier to know where to dig next.</blockquote>
+      Visualizing the material distribution from different contexts can make it easier to know where to excavate next. Seeing which materials
+      appear together can help archaeologists determine the purpose of a particular area. For example, the presence of charcoal, slag, and plaster
+      within this context indicates that it was part of an industrial metalworking complex.</blockquote>
       <img src="Images/Polis Specific Context.jpg">
   </div>
+
+  <div class = "left">
+    <img src="Images/Terracotta FigurineS Scatter.png">
+    <blockquote>To create this scatter plot of terracotta figurine sizes, an initial clean of NaN values was performed. The few entries with greater
+      than 30 were removed as outliers and the remaining data was plotted. This visual is admittedly less novel than some of the others, however it
+      is still interesting to see how effective MATLAB is as a visual tool.
+    </blockquote>    
+  </div>
   
-  <h2>Direct OpenContext Data Use<br><br></h2>
-  <button onclick="window.location.href='https://opencontext.org/search/Cyprus?q=polis#10/35.0349/32.4218/20/any/Google-Satellite';">
-    See the Site
-  </button>
+  <h2>Work Done Through Python</h2>
+
+  <div class = "text">
+    <blockquote>This section outlines the work done on the Polis data set utilizing the Python programming language. The Pandas library is used for data work, with MatPlotLib being used for visualizations. The initial process is much the same,
+      with similar steps being taken to import the data and clean NaN values. A Python version of toCategorize was also implemented and functions much the 
+      same as its MATLAB counterpart. The initial visualizations outlined above, such as materials pie or the per context breakdown pie, can be created here as well. 
+      However, the Python script goes a bit further with a function that can create a regression line between two artifact material types or category types across all contexts in the site.
+      This is achieved by first summing the counts of two chosen variables across all contexts and then performing and plotting a linear regression. This could be useful in seeing how the presence of one item affects another. The Python script also contains
+      a function to locate contexts based on minimum counts of a artifact types. An integer linear programming problem was formulated and implemented to tackle this issue. A short
+      paper describing the problem was written and is linked at the bottom of the page with the GitHub repositories for the MATLAB and Python data science work.
+    </blockquote>
+  </div>
+
+  <div class = "right">
+    <blockquote>This regression line shows the relationship between charcoal and slag throughout the site. As the presence of these together indicates a metalworking complex,
+      it is not surprising to see that there is a positive correlation between the two variables across the whole site.
+    </blockquote>
+      <img src="Images/Regression Image.png">
+  </div>
+
+
+  <h2>Related Links</h2>
+
+  <div class="container">
+    <button onclick="window.location.href='https://github.com/markpanaro';">
+      My GitHub
+    </button>
+    <button onclick="window.location.href='https://github.com/markpanaro/Text-to-Categorical-MATLAB-Function';">
+      MATLAB Repo
+    </button>
+    <button onclick="window.location.href='https://github.com/markpanaro/DSF-Polis-Project';">
+      Python Repo
+    </button>
+    <button onclick="window.location.href='https://medium.com/@panarom/selecting-an-archaeological-context-using-integer-linear-programming-8f60cf7a405d';">
+      ILP Paper
+    </button>
+  </div>
 
   <div class="text">
     <blockquote><br><br></blockquote>
