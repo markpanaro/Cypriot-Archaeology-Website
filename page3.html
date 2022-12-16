@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="styles.css">
-    <title>Visualizations of Polis Chrysochous Data</title>
-  </head>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <title>Visualizations of Polis Chrysochous Data</title>
+</head>
+
+<body>
 
   <div class="topnav">
     <a href="index.html">Home</a>
@@ -12,7 +15,7 @@
     <a href="citations.html">Citations</a>
   </div>
 
-<body>
+
   <h1>Visualizations of Polis Chrysochous Data</h1>
 
   <h2>Using Open Context's Excavations at Polis Set</h2>
@@ -81,10 +84,10 @@
     <blockquote>This section outlines the work done on the Polis data set utilizing the Python programming language. The Pandas library is used for data work, with MatPlotLib being used for visualizations. The initial process is much the same,
       with similar steps being taken to import the data and clean NaN values. A Python version of toCategorize was also implemented and functions much the 
       same as its MATLAB counterpart. The initial visualizations outlined above, such as materials pie or the per context breakdown pie, can be created here as well. 
-      However, the Python script goes a bit further with a function that can create a regression line between two artifact material types or category types across all contexts in the site.
-      This is achieved by first summing the counts of two chosen variables across all contexts and then performing and plotting a linear regression. This could be useful in seeing how the presence of one item affects another. The Python script also contains
-      a function to locate contexts based on minimum counts of a artifact types. An integer linear programming problem was formulated and implemented to tackle this issue. A short
-      paper describing the problem was written and is linked at the bottom of the page with the GitHub repositories for the MATLAB and Python data science work.
+      However, the Python script goes a bit further with functions that can create a histogram or a regression line between artifact material types or category types across all contexts in the site.
+      This is achieved by first summing the counts of two chosen variables across all contexts and then performing the necessary work to plot the results. The Python script also contains
+      a function to locate contexts based on minimum counts of artifact types. A short paper describing the integer linear programming problem formulated to tackle this issue was written 
+      and is linked at the bottom of the page with the GitHub repositories for the MATLAB and Python data science work.
     </blockquote>
   </div>
 
@@ -111,7 +114,7 @@
     <button onclick="window.location.href='https://github.com/markpanaro';">
       My GitHub
     </button>
-    <button onclick="window.location.href='https://github.com/markpanaro/Text-to-Categorical-MATLAB-Function';">
+    <button onclick="window.location.href='https://github.com/markpanaro/MATLAB-Polis-Visuals';">
       MATLAB Repo
     </button>
     <button onclick="window.location.href='https://github.com/markpanaro/DSF-Polis-Project';">
