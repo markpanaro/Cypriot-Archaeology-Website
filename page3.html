@@ -89,10 +89,19 @@
   </div>
 
   <div class = "right">
-    <blockquote>This regression line shows the relationship between charcoal and slag throughout the site. As the presence of these together indicates a metalworking complex,
-      it is not surprising to see that there is a positive correlation between the two variables across the whole site.
+    <blockquote>The histogram function creates a histogram of the counts of a certain type of artifact across the entire site. Some initial work is done to sum up the individual item counts 
+      per context before generating a histogram with a user provided bin count. The normal use of a histogram is to display the frequency distribution of a variable across several data points. 
+      The visual produced here helps with understanding how common a given artifact is across the site, which is certainly helpful from a site analysis standpoint.
     </blockquote>
-      <img src="Images/Regression Image.png">
+      <img src="Images/Polis Histogram.png">
+  </div>
+  <div class = "left">
+    <img src="Images/Polis Regression Line.png">
+    <blockquote>Another interesting function is the regression_line function, which creates a regression line between the counts of two material types across the site. The intention of a 
+      regression line is to predict a y value for a given x value, showing how much and in what direction the response variable changes based on the explanatory variable. The 
+      function itself manipulates the cleaned data into a workable format before performing and plotting a regression line. This shows how the presence of one material influences 
+      the presence of another across the site. As is expected, there is positive correlation within the example presented here as charcoal and slag are directly relatable materials.
+    </blockquote>
   </div>
 
 
